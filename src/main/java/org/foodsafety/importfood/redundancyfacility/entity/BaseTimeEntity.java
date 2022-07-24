@@ -17,12 +17,13 @@ import java.time.LocalDateTime;
 @Setter
 public class BaseTimeEntity {
 
+    //ToDo : String to LocalDateTime
     @CreatedDate
     @Column(updatable = false)
-    private LocalDateTime regTime;
+    private String regTime;
 
     @LastModifiedDate
-    private LocalDateTime updateTime;
+    private String updateTime;
 
 
 }

@@ -5,15 +5,13 @@ import org.foodsafety.importfood.redundancyfacility.constant.CompanyInformation;
 import org.foodsafety.importfood.redundancyfacility.entity.CompanySimilarity;
 import org.foodsafety.importfood.redundancyfacility.service.SimilarityService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("api")
+@CrossOrigin(origins = "https://yojeong-e.github.io")
 public class SimilarityController {
 
     @Autowired

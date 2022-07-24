@@ -20,7 +20,9 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @SpringBootTest
 public class CompanyRepositoryTests {
-    static LocalDateTime currentTime = Times.currentTime();
+
+    // Todo : String to LocalDateTime. After solve gson Serialize Errors
+    static String currentTime = Times.currentTime().toString();
 
     @Autowired
     CompanyRepository companyRepository;
