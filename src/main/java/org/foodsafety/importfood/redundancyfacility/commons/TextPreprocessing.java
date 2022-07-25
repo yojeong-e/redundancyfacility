@@ -6,11 +6,11 @@ public class TextPreprocessing {
     }
 
     public String TextPreprocessing(String str, PreprocessType type) {
-        if (type == PreprocessType.RemovePunctuation) {
+        if (type == PreprocessType.REMOVE_PUNCTUATION) {
             str = removePunctuation(str);
 
 
-        } else if (type == PreprocessType.RemoveWhitespace) {
+        } else if (type == PreprocessType.REMOVE_WHITESPACE) {
             str = removeWhitespace(str);
         } else {
             str = str;

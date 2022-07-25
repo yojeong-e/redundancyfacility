@@ -2,6 +2,7 @@ package org.foodsafety.importfood.redundancyfacility.repository;
 
 
 import org.foodsafety.importfood.redundancyfacility.Times;
+import org.foodsafety.importfood.redundancyfacility.commons.PreprocessType;
 import org.foodsafety.importfood.redundancyfacility.constant.CompanyInformation;
 import org.foodsafety.importfood.redundancyfacility.entity.Company;
 import org.foodsafety.importfood.redundancyfacility.entity.CompanySimilarity;
@@ -13,7 +14,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
@@ -84,7 +84,7 @@ public class CompanyRepositoryTests {
         String searchWord = "Greenholt";
 
         List<CompanySimilarity> companyList = null;
-        companyList = similarityService.getCosineSimilarityList(testCompanyCountry, searchWord, CompanyInformation.Name);
+        companyList = similarityService.getCosineSimilarityList(testCompanyCountry, searchWord, CompanyInformation.NAME, PreprocessType.NONE);
 
         assertThat(companyList.get(0).getCompanySimilarity()).isGreaterThan(50);
     }
@@ -97,7 +97,7 @@ public class CompanyRepositoryTests {
         String searchWord = "1600 Pennsylvania Avenue, NW Washington, D.C. 20500, U.S.";
 
         List<CompanySimilarity> companySimilarityList = null;
-        companySimilarityList = similarityService.getCosineSimilarityList(testCompanyCountry, searchWord, CompanyInformation.Address);
+        companySimilarityList = similarityService.getCosineSimilarityList(testCompanyCountry, searchWord, CompanyInformation.ADDRESS, PreprocessType.NONE);
 
         assertThat(companySimilarityList.get(0).getCompanySimilarity()).isGreaterThan(50);
     }

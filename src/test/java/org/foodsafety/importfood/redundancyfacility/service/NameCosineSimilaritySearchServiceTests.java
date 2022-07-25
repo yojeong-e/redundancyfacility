@@ -83,7 +83,7 @@ public class NameCosineSimilaritySearchServiceTests {
         CosineSimilaritySearchService similaritySearch = new CosineSimilaritySearchService();
 
         TextPreprocessing textPreprocessing = new TextPreprocessing();
-        registerCompanyName = textPreprocessing.TextPreprocessing(registerCompanyName, PreprocessType.RemoveWhitespace);
+        registerCompanyName = textPreprocessing.TextPreprocessing(registerCompanyName, PreprocessType.REMOVE_WHITESPACE);
 
 
         Double cosineSimilarity = similaritySearch.cosineSimilarity(registerCompanyName, preRegisterCompanyName);
@@ -101,7 +101,7 @@ public class NameCosineSimilaritySearchServiceTests {
         CosineSimilaritySearchService similaritySearch = new CosineSimilaritySearchService();
 
         TextPreprocessing textPreprocessing = new TextPreprocessing();
-        registerCompanyName = textPreprocessing.TextPreprocessing(registerCompanyName, PreprocessType.RemovePunctuation);
+        registerCompanyName = textPreprocessing.TextPreprocessing(registerCompanyName, PreprocessType.REMOVE_PUNCTUATION);
 
         Double cosineSimilarity = similaritySearch.cosineSimilarity(registerCompanyName, preRegisterCompanyName);
 

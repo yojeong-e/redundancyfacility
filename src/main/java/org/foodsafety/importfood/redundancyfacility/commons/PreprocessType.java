@@ -1,5 +1,5 @@
 package org.foodsafety.importfood.redundancyfacility.commons;
 
 public enum PreprocessType {
-    RemoveWhitespace,RemovePunctuation
+    NONE, REMOVE_WHITESPACE, REMOVE_PUNCTUATION
 }

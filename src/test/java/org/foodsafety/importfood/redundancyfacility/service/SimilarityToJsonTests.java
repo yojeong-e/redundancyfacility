@@ -2,6 +2,7 @@ package org.foodsafety.importfood.redundancyfacility.service;
 
 import org.foodsafety.importfood.redundancyfacility.Times;
 import org.foodsafety.importfood.redundancyfacility.commons.ObjectToJson;
+import org.foodsafety.importfood.redundancyfacility.commons.PreprocessType;
 import org.foodsafety.importfood.redundancyfacility.constant.CompanyInformation;
 import org.foodsafety.importfood.redundancyfacility.entity.CompanySimilarity;
 import org.foodsafety.importfood.redundancyfacility.repository.CompanyRepository;
@@ -40,7 +41,7 @@ public class SimilarityToJsonTests {
         String searchWord = "1600 Pennsylvania Avenue, NW Washington, D.C. 20500, U.S.";
 
         List<CompanySimilarity> companySimilarityList = null;
-        companySimilarityList = similarityService.getCosineSimilarityList(testCompanyCountry, searchWord, CompanyInformation.Address);
+        companySimilarityList = similarityService.getCosineSimilarityList(testCompanyCountry, searchWord, CompanyInformation.ADDRESS, PreprocessType.NONE);
 
         String companySimilarityJson = objectToJson.companySimilarityListToJson(companySimilarityList);
         assertThat(companySimilarityJson).isInstanceOf(String.class);
